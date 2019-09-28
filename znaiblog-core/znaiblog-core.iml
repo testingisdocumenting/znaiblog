@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-core:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark-ext-gfm-tables:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark-ext-yaml-front-matter:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark-ext-gfm-strikethrough:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.23" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.woodstox:woodstox-core:5.1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-site-extensions:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-java:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.10.2" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-groovy:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:2.5.7" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-latex:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-cpp:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr4:4.5" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr-runtime:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:ST4:4.0.8" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-open-api:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-typescript:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-jupyter:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-sphinx:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.5" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-reactjs:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-diagrams:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: net.sourceforge.plantuml:plantuml:1.2017.16" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-console:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-utils:0.17-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.23" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-csv:1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.jayway.jsonpath:json-path:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: net.minidev:json-smart:2.3" level="project" />
+    <orderEntry type="library" name="Maven: net.minidev:accessors-smart:1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.25" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.twosigma.webtau:webtau-core-groovy:1.13" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.twosigma.webtau:webtau-core:1.13" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.twosigma.webtau:webtau-console:1.13" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.twosigma.webtau:webtau-utils:1.13" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.twosigma.webtau:webtau-groovy-ast:1.13" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.groovy:groovy-nio:2.5.7" level="project" />
+  </component>
+</module>
