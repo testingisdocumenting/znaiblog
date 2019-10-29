@@ -11,4 +11,8 @@ public class ZnaiBlogCfg {
     public Path getBlogRoot() {
         return blogRoot;
     }
+
+    public String getArticlesDirName() {
+        return "articles";
+    }
 }

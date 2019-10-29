@@ -1,6 +1,7 @@
-package org.testingisdocumenting.znaiblog.markdown
+package org.testingisdocumenting.jbe.markdown
 
 import org.junit.Test
+import org.testingisdocumenting.znaiblog.markdown.PostMetaExtractor
 
 import java.time.Month
 

@@ -10,12 +10,18 @@
         <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>znaiblog-core</artifactId>
+    <artifactId>znaiblog-app</artifactId>
 
     <dependencies>
         <dependency>
+            <groupId>org.testingisdocumenting</groupId>
+            <artifactId>znaiblog-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.twosigma.znai</groupId>
-            <artifactId>znai</artifactId>
+            <artifactId>znai-server</artifactId>
         </dependency>
 
         <dependency>
