@@ -16,6 +16,7 @@ import static org.testingisdocumenting.znaiblog.ZnaiBlogCfg.cfg;
 
 public class ZnaiBlogApp {
     private final ReactJsBundle reactJsBundle;
+    private final Path deployPath;
     private Path sourceRoot;
     private Path deployRoot;
     private WebSite webSite;
@@ -30,7 +31,8 @@ public class ZnaiBlogApp {
     ZnaiBlogApp() {
         reactJsBundle = new ReactJsBundle();
         sourceRoot = cfg.getBlogRoot();
-        deployRoot = sourceRoot.resolve("deployed");
+        deployRoot = sourceRoot.resolve("deployed").toAbsolutePath();
+        deployPath = deployRoot.resolve(getDocId());
     }
 
     public void start() {
@@ -55,7 +57,7 @@ public class ZnaiBlogApp {
                 withWebResources(favIconResource).
                 withEnabledPreview(isPreviewMode());
 
-        webSite = webSiteCfg.deployTo(deployRoot);
+        webSite = webSiteCfg.deployTo(deployPath);
     }
 
     private void preview() {
@@ -68,6 +70,6 @@ public class ZnaiBlogApp {
     }
 
     private String getDocId() {
-        return "todo-blog";
+        return "preview";
     }
 }
