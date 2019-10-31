@@ -61,9 +61,9 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
     }
 
     @Override
-    public TocItem tocItemByPath(TableOfContents tableOfContents, Path path) {
+    public TocItem tocItemByPath(ComponentsRegistry componentsRegistry, TableOfContents tableOfContents, Path path) {
         return pathByTocItem.entrySet().stream()
-                .filter(e -> e.getValue().equals(path))
+                .filter(e -> path.endsWith(e.getValue()))
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .orElse(null);
