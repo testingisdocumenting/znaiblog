@@ -1,23 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import {SimpleTextOverride} from './SimpleTextOverride';
+import {BlogLayout} from './BlogLayout';
 
 // @ts-ignore
-if (!global['elementsLibrary']) {
-    // @ts-ignore
-    global['elementsLibrary'] = {};
-}
-
-// @ts-ignore
-const elementsLibrary = global['elementsLibrary'];
-
-elementsLibrary.SimpleText = SimpleTextOverride;
-
-// @ts-ignore
-global.testZnaiOverrides = () => {
-    ReactDOM.render(<SimpleTextOverride text="todo text"/>, document.getElementById('root'));
-};
+themeRegistry.overrideElement('DocumentationLayout', BlogLayout);
 
 if (process.env.NODE_ENV !== 'production') {
     const App = require('./App').App;
