@@ -2,19 +2,22 @@
   "name": "znaiblog-reactjs",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@types/jest": "24.0.21",
     "@types/node": "12.12.5",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "awesome-typescript-loader": "^5.2.1",
     "react-scripts": "3.2.0",
-    "typescript": "3.6.4"
+    "typescript": "3.6.4",
+    "webpack-cli": "^3.3.10"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
