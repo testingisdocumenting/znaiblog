@@ -4,3 +4,5 @@ summary: newer about blogging
 ---
 
 # Entry A
+
+hello text
