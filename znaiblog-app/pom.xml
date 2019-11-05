@@ -20,6 +20,17 @@
         </dependency>
 
         <dependency>
+            <groupId>org.testingisdocumenting</groupId>
+            <artifactId>znaiblog-reactjs</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.twosigma.znai</groupId>
+            <artifactId>znai-reactjs</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.twosigma.znai</groupId>
             <artifactId>znai-server</artifactId>
         </dependency>

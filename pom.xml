@@ -78,6 +78,12 @@
 
             <dependency>
                 <groupId>com.twosigma.znai</groupId>
+                <artifactId>znai-reactjs</artifactId>
+                <version>${znai.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.twosigma.znai</groupId>
                 <artifactId>znai-server</artifactId>
                 <version>${znai.version}</version>
             </dependency>
