@@ -71,6 +71,7 @@
                     <target name="copy-blog-bundle">
                         <copy verbose="true" todir="${project.build.outputDirectory}/static">
                             <fileset file="dist/blog-bundle.js" />
+                            <fileset file="dist/blog-style.css" />
                         </copy>
                     </target>
                 </configuration>

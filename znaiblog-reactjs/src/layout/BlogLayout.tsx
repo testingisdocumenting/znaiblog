@@ -1,9 +1,11 @@
 import * as React from 'react';
 
+import './BlogLayout.css';
+
 interface Props {
     previewTracker?: React.ReactNode,
     searchPopup?: React.ReactNode,
-    renderedPage?: React.ReactNode,
+    renderedPage: React.ReactNode,
     renderedNextPrevNavigation?: React.ReactNode,
     renderedFooter?: React.ReactNode,
     docMeta: object,
@@ -40,6 +42,10 @@ export function BlogLayout({
 
     return (
         <div className="blog-layout">
+            <div className="blog-header">
+                Header goes here
+            </div>
+
             {previewTracker}
 
             <div className="blog-entry">
