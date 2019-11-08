@@ -3,6 +3,7 @@ package org.testingisdocumenting.znaiblog.markdown;
 import com.twosigma.znai.core.ComponentsRegistry;
 import com.twosigma.znai.parser.MarkupParser;
 import com.twosigma.znai.parser.commonmark.MarkdownParser;
+import com.twosigma.znai.structure.PageMeta;
 import com.twosigma.znai.structure.TableOfContents;
 import com.twosigma.znai.structure.TocItem;
 import com.twosigma.znai.utils.FileUtils;
@@ -52,7 +53,12 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
 
     @Override
     public Path fullPath(ComponentsRegistry componentsRegistry, Path root, TocItem tocItem) {
+        if (tocItem.isIndex()) {
+            return root.resolve("index.md");
+        }
+
         Path path = pathByTocItem.get(tocItem);
+
         if (path == null) {
             throw new IllegalStateException("can't find file associated with TOC Item: " + tocItem);
         }
@@ -76,11 +82,14 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
 
         blogEntries.stream()
                 .map(path -> new PostEntry(metaExtractor.extract(FileUtils.fileTextContent(path)), path))
-                .sorted(Comparator.comparing(a -> a.getPostMeta().getDate()))
+                .sorted(Comparator.comparing((PostEntry a) -> a.getPostMeta().getDate()).reversed())
                 .forEach(blogEntry -> {
                     TocItem tocItem = toc.addTocItem("entry", fileNameWithoutExtension(blogEntry.getPath()));
+                    tocItem.setPageMeta(new PageMeta());
                     pathByTocItem.put(tocItem, blogEntry.getPath());
                 });
+
+        toc.addIndex();
 
         return toc;
     }
