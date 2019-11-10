@@ -30,9 +30,13 @@ function SingleEntry(entry: TocEntry) {
         <div className="blog-list-entry">
             <a className="blog-list-entry-link-wrapper" href={`${entry.dirName}/${entry.fileName}`}>
                 <div className="blog-list-entry-title">{entry.pageTitle}</div>
-                <div className="blog-list-entry-date">{entry.pageMeta.date}</div>
+                <div className="blog-list-entry-date">{renderDate(entry.pageMeta.date![0])}</div>
                 <div className="blog-list-entry-summary">{entry.pageMeta.summary}</div>
             </a>
         </div>
     )
+}
+
+function renderDate(yyyyMmDd: string) {
+    return new Date(yyyyMmDd).toDateString();
 }

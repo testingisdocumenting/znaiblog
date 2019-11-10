@@ -3,3 +3,7 @@
     color: #ddd;
     padding: 16px;
 }
+
+.main-panel {
+    overflow-y: visible;
+}
