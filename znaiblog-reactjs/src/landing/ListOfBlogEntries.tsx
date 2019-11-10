@@ -19,7 +19,7 @@ interface Props {
 
 export function ListOfBlogEntries({tocItems}: Props) {
     return (
-        <div className="list-of-blog-entries">
+        <div className="list-of-blog-entries content-block">
             {tocItems.map(e => <SingleEntry key={e.pageTitle} {...e}/>)}
         </div>
     )
@@ -30,8 +30,8 @@ function SingleEntry(entry: TocEntry) {
         <div className="blog-list-entry">
             <a className="blog-list-entry-link-wrapper" href={`${entry.dirName}/${entry.fileName}`}>
                 <div className="blog-list-entry-title">{entry.pageTitle}</div>
-                <div className="blog-list-entry-title">{entry.pageMeta.summary}</div>
-                <div className="blog-list-entry-title">{entry.pageMeta.date}</div>
+                <div className="blog-list-entry-date">{entry.pageMeta.date}</div>
+                <div className="blog-list-entry-summary">{entry.pageMeta.summary}</div>
             </a>
         </div>
     )

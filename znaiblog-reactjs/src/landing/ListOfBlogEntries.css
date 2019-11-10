@@ -1,5 +1,30 @@
+.list-of-blog-entries {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 32px;
+}
+
 .blog-list-entry-link-wrapper {
     display: block;
     width: 100%;
+}
+
+.blog-list-entry a {
+    color: var(--znai-regular-text-color);
     text-decoration: none;
+}
+
+.blog-list-entry-title {
+    font-size: 28px;
+    color: var(--znai-brand-primary-color);
+    font-weight: bold;
+}
+
+.blog-list-entry-date {
+    color: var(--znai-regular-text-light-color);
+    margin-bottom: 8px;
+}
+
+.blog-list-entry-summary {
+    color: var(--znai-regular-text-color);
 }
