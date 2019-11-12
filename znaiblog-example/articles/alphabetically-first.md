@@ -4,3 +4,10 @@ summary: about blogging
 ---
 
 # Entry B
+
+text goes here and some code 
+
+```
+class Test {
+}
+```
