@@ -22,6 +22,7 @@
 
 .blog-list-entry-date {
     color: var(--znai-regular-text-light-color);
+    font-size: var(--znai-smaller-text-size);
     margin-bottom: 8px;
 }
 

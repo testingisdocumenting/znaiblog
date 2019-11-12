@@ -1,0 +1,24 @@
+.blog-page-title-title {
+    font-size: 36px;
+    color: var(--znai-brand-primary-color);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.blog-page-title-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.blog-page-title-date {
+    color: var(--znai-regular-text-light-color);
+    font-size: var(--znai-smaller-text-size);
+    margin-right: 8px;
+}
+
+.blog-page-title-presentation {
+    color: var(--znai-regular-text-light-color);
+    font-size: var(--znai-small-meta-text-size);
+    cursor: pointer;
+}

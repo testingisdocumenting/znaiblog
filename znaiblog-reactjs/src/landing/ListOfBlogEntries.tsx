@@ -1,20 +1,13 @@
 import React from 'react';
+
+import {TocItem} from '../model/TocItem';
+
+import {renderDate} from '../utils/dateUtils';
+
 import './ListOfBlogEntries.css';
 
-interface TocEntry {
-    pageTitle: string;
-    pageMeta: TocMeta;
-    dirName: string;
-    fileName: string;
-}
-
-interface TocMeta {
-    summary?: string[];
-    date?: string[];
-}
-
 interface Props {
-    tocItems: TocEntry[];
+    tocItems: TocItem[];
 }
 
 export function ListOfBlogEntries({tocItems}: Props) {
@@ -25,7 +18,7 @@ export function ListOfBlogEntries({tocItems}: Props) {
     )
 }
 
-function SingleEntry(entry: TocEntry) {
+function SingleEntry(entry: TocItem) {
     return (
         <div className="blog-list-entry">
             <a className="blog-list-entry-link-wrapper" href={`${entry.dirName}/${entry.fileName}`}>
@@ -35,8 +28,4 @@ function SingleEntry(entry: TocEntry) {
             </a>
         </div>
     )
-}
-
-function renderDate(yyyyMmDd: string) {
-    return new Date(yyyyMmDd).toDateString();
 }

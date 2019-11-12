@@ -1,4 +1,8 @@
+/* this is not an override of znai defaults but a reference to use during development */
 :root {
     --znai-regular-text-color: #383838;
     --znai-regular-text-light-color: #666;
+    --znai-regular-text-size: 16px;
+    --znai-smaller-text-size: 14px;
+    --znai-small-meta-text-size: 12px;
 }

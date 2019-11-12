@@ -2,11 +2,13 @@ import * as React from 'react';
 import {ComponentViewer, DropDowns, Registries} from 'react-component-viewer';
 import {blogLayoutDemo} from './layout/BlogLayout.demo';
 import {listOfBlogEntriesDemo} from './landing/ListOfBlogEntries.demo';
+import {blogPageTitleDemo} from './layout/BlogPageTitle.demo';
 
 const registries = new Registries();
 
 registries.add('layout')
-    .registerAsTabs('Blog Layout', blogLayoutDemo);
+    .registerAsTabs('Blog Layout', blogLayoutDemo)
+    .registerAsRows('Blog Page Title', blogPageTitleDemo);
 
 registries.add('landing')
     .registerAsTabs('List Of Blog Entries', listOfBlogEntriesDemo);
