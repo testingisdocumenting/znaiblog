@@ -7,3 +7,7 @@
 .main-panel {
     overflow-y: visible;
 }
+
+.empty-section-title {
+    display: none;
+}
