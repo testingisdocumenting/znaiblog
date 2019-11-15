@@ -1,15 +1,21 @@
 import * as React from 'react';
 
-import {Registry} from 'react-component-viewer';
+import {Registry, simpleAction} from 'react-component-viewer';
 import {BlogLayout} from './BlogLayout';
 import {ListOfBlogEntries} from '../landing/ListOfBlogEntries';
 
+const onHeaderClick = simpleAction('on header click');
+
 export function blogLayoutDemo(registry: Registry) {
     const commonData = {
-        docMeta: {},
+        docMeta: {
+            id: 'test-blog',
+            title: 'Blog About Nature',
+            type: 'personal-blog'
+        },
+        onHeaderClick: onHeaderClick,
         selectedTocItem: {},
         toc: {},
-        onHeaderClick: {},
         onTocItemClick: {},
         onTocItemPageSectionClick: {},
         onNextPage: {},

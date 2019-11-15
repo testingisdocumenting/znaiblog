@@ -1,7 +1,35 @@
+.blog-layout {
+    min-height: 100vh;
+}
+
 .blog-header {
-    background-color: #2e3644;
-    color: #ddd;
+    background-color: var(--znaiblog-header-background-color);
+    height: 72px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.blog-header-content {
+    font-size: var(--znaiblog-title-size);
+    font-weight: bold;
+    color: var(--znaiblog-header-color);
+
+    width: var(--znai-single-column-full-width);
+
+    margin-left: auto;
+    margin-right: auto;
+
     padding: 16px;
+}
+
+.blog-header-title {
+    cursor: pointer;
+}
+
+.blog-body {
+    width: var(--znai-single-column-full-width);
+    margin: 0 auto;
 }
 
 .main-panel {
