@@ -14,7 +14,7 @@ interface Props {
 
 export function ListOfBlogEntries({tocItems}: Props) {
     return (
-        <div className="list-of-blog-entries content-block">
+        <div className="list-of-blog-entries">
             {tocItems.map(e => <SingleEntry key={e.pageTitle} {...e}/>)}
         </div>
     )

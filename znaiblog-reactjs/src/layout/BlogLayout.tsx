@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import {DocMeta} from '../model/DocMeta';
+
 import './BlogLayout.css';
 
 interface Props {
@@ -8,10 +10,10 @@ interface Props {
     renderedPage: React.ReactNode,
     renderedNextPrevNavigation?: React.ReactNode,
     renderedFooter?: React.ReactNode,
-    docMeta: object,
+    docMeta: DocMeta,
     selectedTocItem: object,
     toc: object,
-    onHeaderClick: any,
+    onHeaderClick(): void,
     onTocItemClick: any,
     onTocItemPageSectionClick: any,
     onNextPage: any,
@@ -43,14 +45,26 @@ export function BlogLayout({
     return (
         <div className="blog-layout">
             <div className="blog-header">
-                Header goes here
+                <div className="blog-header-content">
+                    <div className="blog-header-title" onClick={onHeaderClick}>
+                        {docMeta.title}
+                    </div>
+
+                    <div className="blog-header-search">
+                    </div>
+
+                    <div className="blog-header-theme">
+                    </div>
+                </div>
             </div>
 
-            {previewTracker}
+            <div className="blog-body">
+                {previewTracker}
 
-            <div className="blog-entry">
-                <div className="main-panel">
-                    {renderedPage}
+                <div className="blog-entry">
+                    <div className="main-panel">
+                        {renderedPage}
+                    </div>
                 </div>
             </div>
 
