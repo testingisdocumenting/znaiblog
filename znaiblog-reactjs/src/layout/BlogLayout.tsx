@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import {DocMeta} from '../model/DocMeta';
 
+import {ThemeSwitch} from './ThemeSwitch';
+
 import './BlogLayout.css';
 
 interface Props {
@@ -54,6 +56,7 @@ export function BlogLayout({
                     </div>
 
                     <div className="blog-header-theme">
+                        <ThemeSwitch/>
                     </div>
                 </div>
             </div>

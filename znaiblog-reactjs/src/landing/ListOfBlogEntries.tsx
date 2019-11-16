@@ -4,7 +4,7 @@ import {TocItem} from '../model/TocItem';
 
 import {renderDate} from '../utils/dateUtils';
 
-import {documentationNavigation} from '../structure/documentationNavigation';
+import {documentationNavigation} from '../znaiapi/documentationNavigation';
 
 import './ListOfBlogEntries.css';
 
