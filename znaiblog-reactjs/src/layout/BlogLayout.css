@@ -3,16 +3,21 @@
 }
 
 .blog-header {
-    background-color: var(--znaiblog-header-background-color);
-    height: 72px;
     display: flex;
     align-items: center;
+
+    background-color: var(--znaiblog-header-background-color);
+
+    height: 72px;
     margin-bottom: 48px;
 }
 
 .blog-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     font-size: var(--znaiblog-title-size);
-    font-weight: bold;
     color: var(--znaiblog-header-color);
 
     width: var(--znai-single-column-full-width);
@@ -24,6 +29,7 @@
 }
 
 .blog-header-title {
+    font-weight: bold;
     cursor: pointer;
 }
 
