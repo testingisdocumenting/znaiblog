@@ -1,4 +1,8 @@
 {
   "title": "Testing Is Documenting",
-  "type": "Blog"
+  "type": "Blog",
+  "viewOn": {
+    "title": "Edit on GitHub",
+    "link": "https://github.com/testingisdocumenting/znaiblog/edit/master/znaiblog-example"
+  }
 }

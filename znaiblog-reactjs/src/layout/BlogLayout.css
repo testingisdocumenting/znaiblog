@@ -1,5 +1,7 @@
 .blog-layout {
     min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .blog-header {
@@ -40,8 +42,31 @@
 
 .main-panel {
     overflow-y: visible;
+    max-height: unset;
 }
 
 .empty-section-title {
     display: none;
+}
+
+.blog-discuss {
+    margin-top: 32px;
+}
+
+.blog-discuss-content {
+    display: flex;
+
+    width: var(--znai-single-column-full-width);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-discuss-twitter {
+    margin-right: 24px;
+}
+
+.footer {
+    margin-left: 0;
+    margin-right: 0;
 }

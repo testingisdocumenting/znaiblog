@@ -2,15 +2,14 @@ package org.testingisdocumenting.znaiblog.markdown;
 
 import com.twosigma.znai.core.ComponentsRegistry;
 import com.twosigma.znai.parser.MarkupParser;
+import com.twosigma.znai.parser.MarkupParsingConfiguration;
 import com.twosigma.znai.parser.commonmark.MarkdownParser;
 import com.twosigma.znai.structure.PageMeta;
 import com.twosigma.znai.structure.TableOfContents;
 import com.twosigma.znai.structure.TocItem;
 import com.twosigma.znai.utils.FileUtils;
-import com.twosigma.znai.website.markups.MarkupParsingConfiguration;
 import org.testingisdocumenting.znaiblog.PostEntry;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -83,10 +82,11 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
         blogEntries.stream()
                 .map(path -> new PostEntry(metaExtractor.extract(FileUtils.fileTextContent(path)), path))
                 .sorted(Comparator.comparing((PostEntry a) -> a.getPostMeta().getDate()).reversed())
-                .forEach(blogEntry -> {
-                    TocItem tocItem = toc.addTocItem("entry", fileNameWithoutExtension(blogEntry.getPath()));
+                .forEach(postEntry -> {
+                    TocItem tocItem = toc.addTocItem("entry", fileNameWithoutExtension(postEntry.getPath()));
                     tocItem.setPageMeta(new PageMeta());
-                    pathByTocItem.put(tocItem, blogEntry.getPath());
+                    tocItem.setViewOnRelativePath(buildViewOnPath(postEntry));
+                    pathByTocItem.put(tocItem, postEntry.getPath());
                 });
 
         toc.addIndex();
@@ -106,5 +106,10 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
         }
 
         return fileName.substring(0, lastDotIdx);
+    }
+
+    private String buildViewOnPath(PostEntry postEntry) {
+        return cfg.getBlogRoot().relativize(postEntry.getPath()).toString()
+                .replace('\\', '/');
     }
 }

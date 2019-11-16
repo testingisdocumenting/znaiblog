@@ -11,10 +11,20 @@ export function blogLayoutDemo(registry: Registry) {
         docMeta: {
             id: 'test-blog',
             title: 'Blog About Nature',
-            type: 'personal-blog'
+            type: 'personal-blog',
+            viewOn: {
+                title: 'GitHub',
+                link: 'https://github.com/testingisdocumenting/znaiblog/edit/master/znaiblog-example'
+            }
         },
         onHeaderClick: onHeaderClick,
-        selectedTocItem: {},
+        selectedTocItem: {
+            pageTitle: 'page title',
+            pageMeta: {},
+            dirName: 'entry',
+            fileName: 'entry-a',
+            viewOnRelativePath: 'article/entry-a.md'
+        },
         toc: {},
         onTocItemClick: {},
         onTocItemPageSectionClick: {},
@@ -51,8 +61,9 @@ function genListOfEntries(count: number) {
         "sectionTitle": "Entry",
         "pageTitle": "Entry " + idx,
         "pageMeta": {"date": ["2019-09-16"], "summary": ["about blogging " + idx]},
-        "fileName": "entry-b",
+        "fileName": "entry-b-" + idx,
         "dirName": "entry",
+        "viewOnRelativePath": "articles/entry-b-" + idx + ".md",
         "pageSectionIdTitles": []
     }));
 }
