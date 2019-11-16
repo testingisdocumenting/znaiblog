@@ -17,6 +17,7 @@ function sampleData() {
             "pageMeta": {"date": ["2019-10-26"], "summary": ["newer about blogging"]},
             "fileName": "entry-a",
             "dirName": "entry",
+            "viewOnRelativePath": "article/entry-a.md",
             "pageSectionIdTitles": []
         },
         {
@@ -25,6 +26,7 @@ function sampleData() {
             "pageMeta": {"date": ["2019-09-16"], "summary": ["about blogging"]},
             "fileName": "entry-b",
             "dirName": "entry",
+            "viewOnRelativePath": "article/entry-b.md",
             "pageSectionIdTitles": []
         },
         {
@@ -33,6 +35,7 @@ function sampleData() {
             "pageMeta": {"date": ["2019-08-11"], "summary": ["REST API testing"]},
             "fileName": "entry-c",
             "dirName": "entry",
+            "viewOnRelativePath": "article/entry-c.md",
             "pageSectionIdTitles": []
         },
     ]

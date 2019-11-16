@@ -8,6 +8,7 @@ const tocItem: TocItem = {
     pageTitle: 'Test Page Title',
     dirName: 'entry',
     fileName: 'test-page-title',
+    viewOnRelativePath: 'article/test-page-title.md',
     pageMeta: {
         date: ['2019-11-02'],
         summary: ['sample summary']

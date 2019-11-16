@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 public class ZnaiBlogCfg {
     public static final ZnaiBlogCfg cfg = new ZnaiBlogCfg();
 
-    private Path blogRoot = Paths.get("");
+    private Path blogRoot = Paths.get("").toAbsolutePath();
 
     public Path getBlogRoot() {
         return blogRoot;

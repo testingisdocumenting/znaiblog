@@ -3,6 +3,7 @@ export interface TocItem {
     pageMeta: TocItemMeta;
     dirName: string;
     fileName: string;
+    viewOnRelativePath: string;
 }
 
 export interface TocItemMeta {
