@@ -1,7 +1,10 @@
-.blog-layout {
+.main-panel {
     min-height: 100vh;
     max-height: 100vh;
-    overflow-y: auto;
+    overflow-y: scroll;
+}
+
+.blog-layout {
 }
 
 .blog-header {
@@ -10,8 +13,9 @@
 
     background-color: var(--znaiblog-header-background-color);
 
-    height: 72px;
     margin-bottom: 48px;
+    margin-left: calc(-1 * var(--znai-single-side-horizontal-min-spacing));
+    margin-right: calc(-1 * var(--znai-single-side-horizontal-min-spacing));
 }
 
 .blog-header-content {
@@ -22,12 +26,11 @@
     font-size: var(--znaiblog-title-size);
     color: var(--znaiblog-header-color);
 
+    height: 80px;
     width: var(--znai-single-column-full-width);
 
     margin-left: auto;
     margin-right: auto;
-
-    padding: 16px;
 }
 
 .blog-header-title {
@@ -38,11 +41,6 @@
 .blog-body {
     width: var(--znai-single-column-full-width);
     margin: 0 auto;
-}
-
-.main-panel {
-    overflow-y: visible;
-    max-height: unset;
 }
 
 .empty-section-title {
@@ -64,9 +62,4 @@
 
 .blog-discuss-twitter {
     margin-right: 24px;
-}
-
-.footer {
-    margin-left: 0;
-    margin-right: 0;
 }

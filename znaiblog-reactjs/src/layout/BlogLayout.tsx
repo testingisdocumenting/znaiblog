@@ -46,43 +46,34 @@ export function BlogLayout({
 
     const pageGenErrorPanel = pageGenError ? (<div className="page-gen-error">{pageGenError}</div>) : null;
 
-    console.log('doc-meta', docMeta);
-
     return (
         <div className="blog-layout">
-            <div className="blog-header">
-                <div className="blog-header-content">
-                    <div className="blog-header-title" onClick={onHeaderClick}>
-                        {docMeta.title}
-                    </div>
+            <div className="main-panel">
+                <div className="blog-header">
+                    <div className="blog-header-content">
+                        <div className="blog-header-title" onClick={onHeaderClick}>
+                            {docMeta.title}
+                        </div>
 
-                    <div className="blog-header-search">
-                    </div>
+                        <div className="blog-header-search">
+                        </div>
 
-                    <div className="blog-header-theme">
-                        <ThemeSwitch/>
-                    </div>
-                </div>
-            </div>
-
-            <div className="blog-body">
-                {previewTracker}
-
-                <div className="blog-entry">
-                    <div className="main-panel">
-                        {renderedPage}
+                        <div className="blog-header-theme">
+                            <ThemeSwitch/>
+                        </div>
                     </div>
                 </div>
+
+                {renderedPage}
+
+                <div className="page-bottom">
+                    <Discuss docMeta={docMeta} tocItem={selectedTocItem}/>
+                    {!isIndex(selectedTocItem) && renderedNextPrevNavigation}
+                    {renderedFooter}
+                </div>
+
+                {pageGenErrorPanel}
             </div>
-
-            <Discuss docMeta={docMeta} tocItem={selectedTocItem}/>
-
-            <div className="page-bottom">
-                {renderedNextPrevNavigation}
-                {renderedFooter}
-            </div>
-
-            {pageGenErrorPanel}
         </div>
     )
 }
@@ -93,11 +84,9 @@ interface DiscussProps {
 }
 
 function Discuss({docMeta, tocItem}: DiscussProps) {
-    if (tocItem.fileName === 'index') {
+    if (isIndex(tocItem)) {
         return null;
     }
-
-    console.log('docMeta.viewOn.link', docMeta.viewOn.link);
 
     return (
         <div className="blog-discuss">
@@ -109,7 +98,8 @@ function Discuss({docMeta, tocItem}: DiscussProps) {
                 </div>
 
                 <div className="blog-discuss-github">
-                    <a href={`${docMeta.viewOn.link}/${tocItem.viewOnRelativePath}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`${docMeta.viewOn.link}/${tocItem.viewOnRelativePath}`} target="_blank"
+                       rel="noopener noreferrer">
                         Edit On GitHub
                     </a>
                 </div>
@@ -121,4 +111,8 @@ function Discuss({docMeta, tocItem}: DiscussProps) {
 function twitterUrl(docMeta: DocMeta, tocItem: TocItem): string {
     const articleUrl = `${window.location.protocol}//${window.location.hostname}/${docMeta.id}/${tocItem.dirName}/${tocItem.fileName}`;
     return 'https://mobile.twitter.com/search?q=' + encodeURIComponent(articleUrl);
+}
+
+function isIndex(tocItem: TocItem) {
+    return tocItem.fileName === 'index';
 }
