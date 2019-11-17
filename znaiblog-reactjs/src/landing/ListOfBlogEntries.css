@@ -2,6 +2,10 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 32px;
+
+    width: var(--znai-single-column-full-width);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blog-list-entry-link-wrapper {

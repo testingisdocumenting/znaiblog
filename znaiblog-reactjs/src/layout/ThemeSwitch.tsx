@@ -15,12 +15,7 @@ export class ThemeSwitch extends React.Component<{}, {}> {
     }
 
     switchTheme = () => {
-        console.log('switchTheme');
-
-        console.log(themeRegistry.currentTheme);
-
         const newTheme = themeRegistry.currentTheme.name === 'default' ? 'znai-dark' : 'default';
-        console.log('new theme', newTheme);
 
         themeRegistry.selectTheme(newTheme);
         this.forceUpdate();
