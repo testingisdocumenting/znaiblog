@@ -4,6 +4,7 @@ import com.twosigma.znai.console.ConsoleOutputs;
 import com.twosigma.znai.console.ansi.AnsiConsoleOutput;
 import com.twosigma.znai.html.HtmlPage;
 import com.twosigma.znai.html.reactjs.ReactJsBundle;
+import com.twosigma.znai.parser.MarkupParsingConfigurations;
 import com.twosigma.znai.server.preview.DocumentationPreview;
 import com.twosigma.znai.web.WebResource;
 import com.twosigma.znai.website.WebSite;
@@ -12,48 +13,48 @@ import org.testingisdocumenting.znaiblog.markdown.BlogMarkdownParsingConfigurati
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static org.testingisdocumenting.znaiblog.ZnaiBlogCfg.cfg;
-
 public class ZnaiBlogApp {
     private final ReactJsBundle reactJsBundle;
     private final Path deployPath;
-    private Path sourceRoot;
-    private Path deployRoot;
+    private final ZnaiBlogCliConfig cliConfig;
     private WebSite webSite;
 
     public static void main(String[] args) {
         ConsoleOutputs.add(new AnsiConsoleOutput());
 
-        ZnaiBlogApp znaiBlogApp = new ZnaiBlogApp();
+        ZnaiBlogApp znaiBlogApp = new ZnaiBlogApp(new ZnaiBlogCliConfig(args));
         znaiBlogApp.start();
     }
 
-    ZnaiBlogApp() {
+    private ZnaiBlogApp(ZnaiBlogCliConfig cliConfig) {
+        this.cliConfig = cliConfig;
         reactJsBundle = new ReactJsBundle();
-        sourceRoot = cfg.getBlogRoot();
-        deployRoot = sourceRoot.resolve("deployed").toAbsolutePath();
-        deployPath = deployRoot.resolve(getDocId());
+        deployPath = cliConfig.getDeployRoot().resolve(cliConfig.getDocId());
     }
 
-    public void start() {
+    private void start() {
         generateBlog();
-        preview();
+        if (cliConfig.isPreview()) {
+            preview();
+        }
     }
 
     private void generateBlog() {
-        Path userDefinedFavicon = sourceRoot.resolve("favicon.png");
+        MarkupParsingConfigurations.add(new BlogMarkdownParsingConfiguration(cliConfig.getSourceRoot()));
+
+        Path userDefinedFavicon = cliConfig.getSourceRoot().resolve("favicon.png");
         WebResource favIconResource = Files.exists(userDefinedFavicon) ?
                 WebResource.withPath(userDefinedFavicon, HtmlPage.FAVICON_PATH):
                 WebResource.fromResource(HtmlPage.FAVICON_PATH);
 
-        WebSite.Configuration webSiteCfg = WebSite.withRoot(sourceRoot).
+        WebSite.Configuration webSiteCfg = WebSite.withRoot(cliConfig.getSourceRoot()).
                 withReactJsBundle(reactJsBundle).
-                withId(getDocId()).
+                withId(cliConfig.getDocId()).
                 withDocumentationType(BlogMarkdownParsingConfiguration.CONFIGURATION_NAME).
-                withMetaFromJsonFile(sourceRoot.resolve("meta.json")).
+                withMetaFromJsonFile(cliConfig.getSourceRoot().resolve("meta.json")).
                 withFileWithLookupPaths("lookup-paths").
-                withFooterPath(sourceRoot.resolve("footer.md")).
-                withExtensionsDefPath(sourceRoot.resolve("extensions.json")).
+                withFooterPath(cliConfig.getSourceRoot().resolve("footer.md")).
+                withExtensionsDefPath(cliConfig.getSourceRoot().resolve("extensions.json")).
                 withWebResources(favIconResource).
                 withEnabledPreview(isPreviewMode());
 
@@ -61,15 +62,11 @@ public class ZnaiBlogApp {
     }
 
     private void preview() {
-        DocumentationPreview preview = new DocumentationPreview(sourceRoot, deployRoot);
+        DocumentationPreview preview = new DocumentationPreview(cliConfig.getSourceRoot(), cliConfig.getDeployRoot());
         preview.start(webSite, 3333);
     }
 
     private boolean isPreviewMode() {
         return true;
-    }
-
-    private String getDocId() {
-        return "preview";
     }
 }

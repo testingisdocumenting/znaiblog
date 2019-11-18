@@ -24,7 +24,12 @@ import static org.testingisdocumenting.znaiblog.ZnaiBlogCfg.cfg;
 public class BlogMarkdownParsingConfiguration implements MarkupParsingConfiguration {
     public static final String CONFIGURATION_NAME = "markdown-blog";
 
-    private Map<TocItem, Path> pathByTocItem = new HashMap<>();
+    private final Map<TocItem, Path> pathByTocItem = new HashMap<>();
+    private final Path sourceRoot;
+
+    public BlogMarkdownParsingConfiguration(Path sourceRoot) {
+        this.sourceRoot = sourceRoot;
+    }
 
     @Override
     public String configurationName() {
@@ -34,7 +39,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
     @Override
     public TableOfContents createToc(ComponentsRegistry componentsRegistry) {
         try {
-            List<Path> blogEntries = Files.walk(cfg.getBlogRoot().resolve(cfg.getArticlesDirName()))
+            List<Path> blogEntries = Files.walk(sourceRoot.resolve(cfg.getArticlesDirName()))
                     .filter(Files::isRegularFile)
                     .filter(p -> p.getFileName().toString().endsWith("." + filesExtension()))
                     .collect(Collectors.toList());
@@ -109,7 +114,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
     }
 
     private String buildViewOnPath(PostEntry postEntry) {
-        return cfg.getBlogRoot().relativize(postEntry.getPath()).toString()
+        return sourceRoot.relativize(postEntry.getPath()).toString()
                 .replace('\\', '/');
     }
 }
