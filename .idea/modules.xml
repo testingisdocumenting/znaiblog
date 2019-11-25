@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/jvm-blog-engine.iml" filepath="$PROJECT_DIR$/.idea/jvm-blog-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/znaiblog.iml" filepath="$PROJECT_DIR$/.idea/znaiblog.iml" />
       <module fileurl="file://$PROJECT_DIR$/znaiblog-app/znaiblog-app.iml" filepath="$PROJECT_DIR$/znaiblog-app/znaiblog-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/znaiblog-core/znaiblog-core.iml" filepath="$PROJECT_DIR$/znaiblog-core/znaiblog-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/znaiblog-example/znaiblog-example.iml" filepath="$PROJECT_DIR$/znaiblog-example/znaiblog-example.iml" />
