@@ -11,8 +11,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-core:1.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-core:1.22-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark:0.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark-ext-gfm-tables:0.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark-ext-yaml-front-matter:0.9.0" level="project" />
@@ -25,29 +25,29 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.woodstox:stax2-api:4.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.woodstox:woodstox-core:6.0.2" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-site-extensions:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-java:1.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-site-extensions:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-java:1.22-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.10.2" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-groovy:1.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-groovy:1.22-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:2.5.7" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-latex:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-cpp:1.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-latex:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-cpp:1.22-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.5" level="project" />
     <orderEntry type="library" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr4:4.5" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:antlr-runtime:3.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.antlr:ST4:4.0.8" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-open-api:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-typescript:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-jupyter:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-sphinx:1.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-open-api:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-typescript:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-jupyter:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-sphinx:1.22-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.5" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-reactjs:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-diagrams:1.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-reactjs:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-diagrams:1.22-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: net.sourceforge.plantuml:plantuml:1.2017.16" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-console:1.21-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-utils:1.21-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-console:1.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.twosigma.znai:znai-utils:1.22-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.24" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.1" level="project" />

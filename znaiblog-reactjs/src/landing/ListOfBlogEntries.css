@@ -19,7 +19,7 @@
 }
 
 .blog-list-entry-title {
-    font-size: var(--znaiblog-title-size);
+    font-size: var(--znaiblog-list-title-size);
     color: var(--znai-brand-primary-color);
     font-weight: bold;
 }
