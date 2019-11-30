@@ -1,7 +1,8 @@
 :root {
-    --znai-brand-primary-color: #aa5c3d;
+    --znai-brand-primary-color: #9c52aa;
     --znai-single-column-full-width: 900px;
-    --znaiblog-title-size: 28px;
+    --znaiblog-title-size: 36px;
+    --znaiblog-list-title-size: 28px;
 
     --znaiblog-header-background-color: #17151d;
     --znaiblog-header-color: #afafaf;

@@ -56,7 +56,7 @@ public class ZnaiBlogApp {
                 withFooterPath(cliConfig.getSourceRoot().resolve("footer.md")).
                 withExtensionsDefPath(cliConfig.getSourceRoot().resolve("extensions.json")).
                 withWebResources(favIconResource).
-                withEnabledPreview(isPreviewMode());
+                withEnabledPreview(cliConfig.isPreview());
 
         webSite = webSiteCfg.deployTo(deployPath);
     }
@@ -64,9 +64,5 @@ public class ZnaiBlogApp {
     private void preview() {
         DocumentationPreview preview = new DocumentationPreview(cliConfig.getSourceRoot(), cliConfig.getDeployRoot());
         preview.start(webSite, 3333);
-    }
-
-    private boolean isPreviewMode() {
-        return true;
     }
 }
