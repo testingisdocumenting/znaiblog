@@ -6,4 +6,12 @@
 
     --znaiblog-header-background-color: #17151d;
     --znaiblog-header-color: #afafaf;
+
+    --znaiblog-mobile-breakpoint: 600px;
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --znai-single-column-full-width: auto;
+    }
 }

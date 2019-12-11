@@ -8,9 +8,6 @@
 }
 
 .blog-header {
-    display: flex;
-    align-items: center;
-
     background-color: var(--znaiblog-header-background-color);
 
     margin-bottom: 48px;
@@ -23,11 +20,11 @@
     align-items: center;
     justify-content: space-between;
 
+    width: var(--znai-single-column-full-width);
     font-size: var(--znaiblog-title-size);
     color: var(--znaiblog-header-color);
 
-    height: 80px;
-    width: var(--znai-single-column-full-width);
+    padding: 16px 0;
 
     margin-left: auto;
     margin-right: auto;
@@ -36,6 +33,7 @@
 .blog-header-title {
     font-weight: bold;
     cursor: pointer;
+    margin-right: 8px;
 }
 
 .blog-body {
@@ -54,7 +52,7 @@
 .blog-discuss-content {
     display: flex;
 
-    width: var(--znai-single-column-full-width);
+    max-width: var(--znai-single-column-full-width);
 
     margin-left: auto;
     margin-right: auto;
@@ -62,4 +60,18 @@
 
 .blog-discuss-twitter {
     margin-right: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+    .blog-header-content {
+        padding-left: var(--znai-single-side-horizontal-min-spacing);
+        padding-right: var(--znai-single-side-horizontal-min-spacing);
+    }
+
+    .blog-header-title {
+    }
+
+    svg {
+        max-width: 100%;
+    }
 }

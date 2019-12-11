@@ -10,7 +10,7 @@ export function blogLayoutDemo(registry: Registry) {
     const commonData = {
         docMeta: {
             id: 'test-blog',
-            title: 'Blog About Nature',
+            title: 'Blog About Green Nature',
             type: 'personal-blog',
             viewOn: {
                 title: 'GitHub',
