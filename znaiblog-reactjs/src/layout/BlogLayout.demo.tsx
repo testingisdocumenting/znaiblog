@@ -36,6 +36,7 @@ export function blogLayoutDemo(registry: Registry) {
     registry.add('default', () => (
         <BlogLayout
             renderedPage={<SamplePage/>}
+            renderedFooter={<SampleFooter/>}
             {...commonData}/>
     ));
 
@@ -52,7 +53,13 @@ export function blogLayoutDemo(registry: Registry) {
 
 function SamplePage() {
     return (
-        <div>dummy page content</div>
+        <div className="page-content">dummy page content</div>
+    )
+}
+
+function SampleFooter() {
+    return (
+        <div className="footer">dummy footer</div>
     )
 }
 
