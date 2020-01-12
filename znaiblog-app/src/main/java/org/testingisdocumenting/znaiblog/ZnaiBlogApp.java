@@ -53,6 +53,7 @@ public class ZnaiBlogApp {
                 withDocumentationType(BlogMarkdownParsingConfiguration.CONFIGURATION_NAME).
                 withMetaFromJsonFile(cliConfig.getSourceRoot().resolve("meta.json")).
                 withFileWithLookupPaths("lookup-paths").
+                withGlobalReferencesPath(cliConfig.getSourceRoot().resolve("references.csv")).
                 withFooterPath(cliConfig.getSourceRoot().resolve("footer.md")).
                 withExtensionsDefPath(cliConfig.getSourceRoot().resolve("extensions.json")).
                 withWebResources(favIconResource).
@@ -62,7 +63,7 @@ public class ZnaiBlogApp {
     }
 
     private void preview() {
-        DocumentationPreview preview = new DocumentationPreview(cliConfig.getSourceRoot(), cliConfig.getDeployRoot());
+        DocumentationPreview preview = new DocumentationPreview(cliConfig.getDeployRoot());
         preview.start(webSite, 3333);
     }
 }
