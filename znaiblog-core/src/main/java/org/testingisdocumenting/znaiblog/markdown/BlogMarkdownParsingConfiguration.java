@@ -86,7 +86,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
 
         blogEntries.stream()
                 .map(path -> new PostEntry(metaExtractor.extract(FileUtils.fileTextContent(path)), path))
-                .sorted(Comparator.comparing((PostEntry a) -> a.getPostMeta().getDate()).reversed())
+                .sorted(Comparator.comparing((PostEntry a) -> a.getPostMeta().getDate()))
                 .forEach(postEntry -> {
                     TocItem tocItem = toc.addTocItem("entry", fileNameWithoutExtension(postEntry.getPath()));
                     tocItem.setPageMeta(new PageMeta());
