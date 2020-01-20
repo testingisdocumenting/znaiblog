@@ -13,9 +13,11 @@ interface Props {
 }
 
 export function ListOfBlogEntries({tocItems}: Props) {
+    const reversedTocItems = [...tocItems].reverse();
+
     return (
         <div className="list-of-blog-entries">
-            {tocItems.map(e => <SingleEntry key={e.pageTitle} {...e}/>)}
+            {reversedTocItems.map(e => <SingleEntry key={e.pageTitle} {...e}/>)}
         </div>
     )
 }
