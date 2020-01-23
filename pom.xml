@@ -26,7 +26,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <groovy.version>2.5.7</groovy.version>
-        <znai.version>1.22</znai.version>
+        <znai.version>1.23-SNAPSHOT</znai.version>
     </properties>
 
     <developers>
