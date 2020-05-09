@@ -1,7 +1,7 @@
 package org.testingisdocumenting.znaiblog;
 
-import com.twosigma.znai.console.ConsoleOutputs;
-import com.twosigma.znai.console.ansi.Color;
+import org.testingisdocumenting.znai.console.ConsoleOutputs;
+import org.testingisdocumenting.znai.console.ansi.Color;
 import org.apache.commons.cli.*;
 
 import java.nio.file.Path;

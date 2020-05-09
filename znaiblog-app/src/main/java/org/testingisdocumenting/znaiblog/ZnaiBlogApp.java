@@ -1,13 +1,13 @@
 package org.testingisdocumenting.znaiblog;
 
-import com.twosigma.znai.console.ConsoleOutputs;
-import com.twosigma.znai.console.ansi.AnsiConsoleOutput;
-import com.twosigma.znai.html.HtmlPage;
-import com.twosigma.znai.html.reactjs.ReactJsBundle;
-import com.twosigma.znai.parser.MarkupParsingConfigurations;
-import com.twosigma.znai.server.preview.DocumentationPreview;
-import com.twosigma.znai.web.WebResource;
-import com.twosigma.znai.website.WebSite;
+import org.testingisdocumenting.znai.console.ConsoleOutputs;
+import org.testingisdocumenting.znai.console.ansi.AnsiConsoleOutput;
+import org.testingisdocumenting.znai.html.HtmlPage;
+import org.testingisdocumenting.znai.html.reactjs.ReactJsBundle;
+import org.testingisdocumenting.znai.parser.MarkupParsingConfigurations;
+import org.testingisdocumenting.znai.server.preview.DocumentationPreview;
+import org.testingisdocumenting.znai.web.WebResource;
+import org.testingisdocumenting.znai.website.WebSite;
 import org.testingisdocumenting.znaiblog.markdown.BlogMarkdownParsingConfiguration;
 
 import java.nio.file.Files;
