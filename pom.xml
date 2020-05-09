@@ -3,7 +3,7 @@
 
     <groupId>org.testingisdocumenting.znaiblog</groupId>
     <artifactId>znaiblog-parent</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <packaging>pom</packaging>
 
     <name>Znai blog engine</name>
@@ -53,7 +53,7 @@
         <url>https://github.com/testingisdocumenting/znaiblog</url>
         <connection>scm:git:https://github.com/testingisdocumenting/znaiblog.git</connection>
         <developerConnection>scm:git:https://github.com/testingisdocumenting/znaiblog.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>0.2</tag>
     </scm>
 
     <distributionManagement>
