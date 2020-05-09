@@ -7,7 +7,8 @@
     <packaging>pom</packaging>
 
     <name>Znai blog engine</name>
-    <url>https://github.com/testingisdocumenting/znaiblog-engine</url>
+    <description>Znai based blog engine</description>
+    <url>https://github.com/testingisdocumenting/znaiblog</url>
 
     <modules>
         <module>znaiblog-core</module>
@@ -49,9 +50,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/testingisdocumenting/znaiblog-engine</url>
-        <connection>scm:git:https://github.com/testingisdocumenting/znaiblog-engine.git</connection>
-        <developerConnection>scm:git:https://github.com/testingisdocumenting/znaiblog-engine.git</developerConnection>
+        <url>https://github.com/testingisdocumenting/znaiblog</url>
+        <connection>scm:git:https://github.com/testingisdocumenting/znaiblog.git</connection>
+        <developerConnection>scm:git:https://github.com/testingisdocumenting/znaiblog.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
