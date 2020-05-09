@@ -24,4 +24,6 @@ hs_err_pid*
 /znaiblog-example/deployed/
 target/
 .vertx/
-.idea/libraries
+
+.idea
+*.iml
