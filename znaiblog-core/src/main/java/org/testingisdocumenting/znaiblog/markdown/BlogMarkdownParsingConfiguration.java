@@ -1,13 +1,13 @@
 package org.testingisdocumenting.znaiblog.markdown;
 
-import com.twosigma.znai.core.ComponentsRegistry;
-import com.twosigma.znai.parser.MarkupParser;
-import com.twosigma.znai.parser.MarkupParsingConfiguration;
-import com.twosigma.znai.parser.commonmark.MarkdownParser;
-import com.twosigma.znai.structure.PageMeta;
-import com.twosigma.znai.structure.TableOfContents;
-import com.twosigma.znai.structure.TocItem;
-import com.twosigma.znai.utils.FileUtils;
+import org.testingisdocumenting.znai.core.ComponentsRegistry;
+import org.testingisdocumenting.znai.parser.MarkupParser;
+import org.testingisdocumenting.znai.parser.MarkupParsingConfiguration;
+import org.testingisdocumenting.znai.parser.commonmark.MarkdownParser;
+import org.testingisdocumenting.znai.structure.PageMeta;
+import org.testingisdocumenting.znai.structure.TableOfContents;
+import org.testingisdocumenting.znai.structure.TocItem;
+import org.testingisdocumenting.znai.utils.FileUtils;
 import org.testingisdocumenting.znaiblog.PostEntry;
 
 import java.io.IOException;
@@ -53,6 +53,11 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
     @Override
     public MarkupParser createMarkupParser(ComponentsRegistry componentsRegistry) {
         return new MarkdownParser(componentsRegistry);
+    }
+
+    @Override
+    public String tocItemResourceName(TocItem tocItem) {
+        return pathByTocItem.get(tocItem).toString();
     }
 
     @Override

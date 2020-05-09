@@ -1,7 +1,7 @@
 package org.testingisdocumenting.znaiblog.overrides;
 
-import com.twosigma.znai.web.WebResource;
-import com.twosigma.znai.web.extensions.WebSiteResourcesProvider;
+import org.testingisdocumenting.znai.web.WebResource;
+import org.testingisdocumenting.znai.web.extensions.WebSiteResourcesProvider;
 
 import java.util.stream.Stream;
 

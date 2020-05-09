@@ -20,13 +20,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <webtau.version>1.13</webtau.version>
+        <webtau.version>1.21.1</webtau.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <groovy.version>2.5.7</groovy.version>
-        <znai.version>1.23-SNAPSHOT</znai.version>
+        <znai.version>1.30</znai.version>
     </properties>
 
     <developers>
@@ -71,25 +71,25 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.twosigma.znai</groupId>
+                <groupId>org.testingisdocumenting.znai</groupId>
                 <artifactId>znai</artifactId>
                 <version>${znai.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.twosigma.znai</groupId>
+                <groupId>org.testingisdocumenting.znai</groupId>
                 <artifactId>znai-reactjs</artifactId>
                 <version>${znai.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.twosigma.znai</groupId>
+                <groupId>org.testingisdocumenting.znai</groupId>
                 <artifactId>znai-server</artifactId>
                 <version>${znai.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.twosigma.webtau</groupId>
+                <groupId>org.testingisdocumenting.webtau</groupId>
                 <artifactId>webtau-core-groovy</artifactId>
                 <version>${webtau.version}</version>
             </dependency>
