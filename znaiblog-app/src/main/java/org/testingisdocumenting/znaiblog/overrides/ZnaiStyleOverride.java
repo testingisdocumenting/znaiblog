@@ -1,7 +1,7 @@
 package org.testingisdocumenting.znaiblog.overrides;
 
-import org.testingisdocumenting.znai.web.WebResource;
-import org.testingisdocumenting.znai.web.extensions.WebSiteResourcesProvider;
+import org.testingisdocumenting.znai.website.WebResource;
+import org.testingisdocumenting.znai.website.WebSiteResourcesProvider;
 
 import java.util.stream.Stream;
 

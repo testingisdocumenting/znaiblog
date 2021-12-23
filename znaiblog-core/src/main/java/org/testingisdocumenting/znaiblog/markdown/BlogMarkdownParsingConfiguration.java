@@ -37,14 +37,14 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
     }
 
     @Override
-    public TableOfContents createToc(ComponentsRegistry componentsRegistry) {
+    public TableOfContents createToc(String docTitle, ComponentsRegistry componentsRegistry) {
         try {
             List<Path> blogEntries = Files.walk(sourceRoot.resolve(cfg.getArticlesDirName()))
                     .filter(Files::isRegularFile)
                     .filter(p -> p.getFileName().toString().endsWith("." + filesExtension()))
                     .collect(Collectors.toList());
 
-            return createToc(blogEntries);
+            return createToc(docTitle, blogEntries);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -84,7 +84,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
                 .orElse(null);
     }
 
-    private TableOfContents createToc(List<Path> blogEntries) {
+    private TableOfContents createToc(String docTitle, List<Path> blogEntries) {
         PostMetaExtractor metaExtractor = new PostMetaExtractor();
 
         TableOfContents toc = new TableOfContents();
@@ -99,7 +99,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
                     pathByTocItem.put(tocItem, postEntry.getPath());
                 });
 
-        toc.addIndex();
+        toc.addIndex(docTitle);
 
         return toc;
     }

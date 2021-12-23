@@ -26,7 +26,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <groovy.version>2.5.7</groovy.version>
-        <znai.version>1.30</znai.version>
+        <znai.version>1.54</znai.version>
     </properties>
 
     <developers>
@@ -72,7 +72,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.testingisdocumenting.znai</groupId>
-                <artifactId>znai</artifactId>
+                <artifactId>znai-website-gen</artifactId>
                 <version>${znai.version}</version>
             </dependency>
 

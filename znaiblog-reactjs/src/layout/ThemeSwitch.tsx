@@ -15,13 +15,17 @@ export class ThemeSwitch extends React.Component<{}, {}> {
     }
 
     switchTheme = () => {
-        const newTheme = themeRegistry.currentTheme.name === 'default' ? 'znai-dark' : 'default';
+        // TODO subscribe to OS theme switchs
+        // @ts-ignore
+        const newTheme = window.znaiTheme.name === 'default' ? 'znai-dark' : 'default';
 
-        themeRegistry.selectTheme(newTheme);
+        // @ts-ignore
+        window.znaiTheme.setExplicitly(newTheme);
         this.forceUpdate();
     };
 
     switchToLabel = () => {
-        return themeRegistry.currentTheme.name === 'default' ? 'dark' : 'light';
+        // @ts-ignore
+        return window.znaiTheme.name === 'default' ? 'dark' : 'light';
     }
 }

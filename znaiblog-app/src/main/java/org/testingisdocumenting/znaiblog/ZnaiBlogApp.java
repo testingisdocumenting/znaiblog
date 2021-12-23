@@ -6,10 +6,12 @@ import org.testingisdocumenting.znai.html.HtmlPage;
 import org.testingisdocumenting.znai.html.reactjs.ReactJsBundle;
 import org.testingisdocumenting.znai.parser.MarkupParsingConfigurations;
 import org.testingisdocumenting.znai.server.preview.DocumentationPreview;
-import org.testingisdocumenting.znai.web.WebResource;
+import org.testingisdocumenting.znai.website.WebResource;
 import org.testingisdocumenting.znai.website.WebSite;
 import org.testingisdocumenting.znaiblog.markdown.BlogMarkdownParsingConfiguration;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -64,6 +66,17 @@ public class ZnaiBlogApp {
 
     private void preview() {
         DocumentationPreview preview = new DocumentationPreview(cliConfig.getDeployRoot());
-        preview.start(webSite, 3333);
+        int port = 3333;
+        preview.start(webSite, port, () -> {
+            reportHostPort(port);
+        });
+    }
+
+    private static void reportHostPort(int port) {
+        try {
+            ConsoleOutputs.out("http://", InetAddress.getLocalHost().getHostName(), ":", port, "/preview");
+        } catch (UnknownHostException e) {
+            ConsoleOutputs.err("Cannot extract host name");
+        }
     }
 }

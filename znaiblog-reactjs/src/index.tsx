@@ -13,7 +13,8 @@ if (process.env.NODE_ENV === 'production') {
     themeRegistry.overrideElement('DocumentationLayout', BlogLayout);
     themeRegistry.overrideElement('ListOfBlogEntries', ListOfBlogEntries);
     themeRegistry.overrideElement('PageTitle', BlogPageTitle);
-    themeRegistry.selectThemeIfNeverSelected('znai-dark');
+    // @ts-ignore
+    window.znaiTheme.setExplicitlyIfNotSetAlready('znai-dark');
 } else {
     const App = require('./App').App;
     ReactDOM.render(<App />, document.getElementById('root'));
