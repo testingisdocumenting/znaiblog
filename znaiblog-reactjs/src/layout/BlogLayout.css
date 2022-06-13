@@ -6,11 +6,11 @@ html, body {
     height: 100%;
 }
 
-.main-panel {
+.znai-main-panel {
     display: flex;
     flex-direction: column;
 
-    min-height: 0;
+    min-height: 100vh;
     max-height: none;
 
     padding-left: 0;

@@ -42,7 +42,8 @@ export function blogLayoutDemo(registry: Registry) {
 
     registry.add('small list of entries', () => (
         <BlogLayout renderedPage={<ListOfBlogEntries tocItems={genListOfEntries(4)}/>}
-                    {...commonData}/>
+                    {...commonData}
+                    renderedFooter={<SampleFooter/>}/>
     ));
 
     registry.add('large list of entries', () => (
