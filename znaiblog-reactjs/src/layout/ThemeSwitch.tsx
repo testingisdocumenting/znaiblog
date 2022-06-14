@@ -1,5 +1,4 @@
 import React from 'react';
-import {themeRegistry} from '../znaiapi/themeRegistry';
 
 import './ThemeSwitch.css';
 
@@ -26,6 +25,6 @@ export class ThemeSwitch extends React.Component<{}, {}> {
 
     switchToLabel = () => {
         // @ts-ignore
-        return window.znaiTheme.name === 'default' ? 'dark' : 'light';
+        return window.znaiTheme && window.znaiTheme.name === 'default' ? 'dark' : 'light';
     }
 }

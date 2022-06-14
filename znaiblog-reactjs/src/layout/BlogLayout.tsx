@@ -48,7 +48,7 @@ export function BlogLayout({
 
     return (
         <div className="blog-layout">
-            <div className="main-panel">
+            <div className="znai-main-panel">
                 <div className="blog-header">
                     <div className="blog-header-content">
                         <div className="blog-header-title" onClick={onHeaderClick}>
