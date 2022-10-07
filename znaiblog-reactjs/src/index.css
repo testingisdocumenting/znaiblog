@@ -1,15 +1,24 @@
 :root {
-    --znai-brand-primary-color: #9c52aa;
+    --znaiblog-article-title-color: #333;
+
     --znai-single-column-full-width: 900px;
     --znai-single-side-horizontal-min-spacing: 20px;
     --znaiblog-title-size: 36px;
-    --znaiblog-list-title-size: 28px;
+    --znaiblog-list-title-size: 22px;
 
-    --znaiblog-header-background-color: #17151d;
-    --znaiblog-header-color: #afafaf;
+    --znaiblog-header-background: none;
+    --znaiblog-header-color: #232323;
     --znai-snippets-bullet-background-color: #1267a7;
 
     --znaiblog-mobile-breakpoint: 600px;
+
+    --znaiblog-entries-category-color: #444;
+}
+
+.theme-znai-dark {
+    --znaiblog-article-title-color: #fafafa;
+    --znaiblog-entries-category-color: #eee;
+    --znaiblog-header-color: #afafaf;
 }
 
 @media only screen and (max-width: 940px) {

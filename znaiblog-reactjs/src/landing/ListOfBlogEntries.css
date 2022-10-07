@@ -1,11 +1,24 @@
-.list-of-blog-entries {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 32px;
-
+.list-all-categories {
     width: var(--znai-single-column-full-width);
     margin-left: auto;
     margin-right: auto;
+}
+
+.list-of-blog-entries-category {
+    font-size: 32px;
+    padding-bottom: 4px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid gray;
+
+    color: var(--znaiblog-entries-category-color);
+
+    text-transform: capitalize;
+}
+
+.list-of-blog-entries {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
 }
 
 .blog-list-entry-link-wrapper {
@@ -20,16 +33,17 @@
 
 .blog-list-entry-title {
     font-size: var(--znaiblog-list-title-size);
-    color: var(--znai-brand-primary-color);
+    color: var(--znaiblog-article-title-color);
     font-weight: bold;
 }
 
 .blog-list-entry-date {
     color: var(--znai-regular-text-light-color);
-    font-size: var(--znai-smaller-text-size);
-    margin-bottom: 8px;
+    font-size: 12px;
+    margin-bottom: 12px;
 }
 
 .blog-list-entry-summary {
     color: var(--znai-regular-text-color);
+    font-size: 16px;
 }

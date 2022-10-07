@@ -8,5 +8,6 @@ export interface TocItem {
 
 export interface TocItemMeta {
     summary?: string[];
+    category: string;
     date?: string[];
 }

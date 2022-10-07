@@ -20,9 +20,16 @@ html, body {
 }
 
 .blog-header {
-    background-color: var(--znaiblog-header-background-color);
+    display: flex;
+    align-items: center;
+    height: 32px;
+
+    background: var(--znaiblog-header-background);
     padding-left: calc(1 * var(--znai-single-side-horizontal-min-spacing));
     padding-right: calc(1 * var(--znai-single-side-horizontal-min-spacing));
+
+    border-bottom: 1px solid;
+
     margin-bottom: 48px;
 }
 
@@ -32,10 +39,8 @@ html, body {
     justify-content: space-between;
 
     width: var(--znai-single-column-full-width);
-    font-size: var(--znaiblog-title-size);
+    font-size: 16px;
     color: var(--znaiblog-header-color);
-
-    padding: 16px 0;
 
     margin-left: auto;
     margin-right: auto;

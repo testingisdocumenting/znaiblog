@@ -7,6 +7,7 @@ import org.testingisdocumenting.znai.parser.commonmark.MarkdownParser;
 import org.testingisdocumenting.znai.structure.PageMeta;
 import org.testingisdocumenting.znai.structure.TableOfContents;
 import org.testingisdocumenting.znai.structure.TocItem;
+import org.testingisdocumenting.znai.structure.TocNameAndOpts;
 import org.testingisdocumenting.znai.utils.FileUtils;
 import org.testingisdocumenting.znaiblog.PostEntry;
 
@@ -18,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.testingisdocumenting.znaiblog.ZnaiBlogCfg.cfg;
 
@@ -38,12 +40,11 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
 
     @Override
     public TableOfContents createToc(String docTitle, ComponentsRegistry componentsRegistry) {
-        try {
-            List<Path> blogEntries = Files.walk(sourceRoot.resolve(cfg.getArticlesDirName()))
-                    .filter(Files::isRegularFile)
-                    .filter(p -> p.getFileName().toString().endsWith("." + filesExtension()))
-                    .collect(Collectors.toList());
+        try (Stream<Path> pathStream = Files.walk(sourceRoot.resolve(cfg.getArticlesDirName()))
+                .filter(Files::isRegularFile)
+                .filter(p -> p.getFileName().toString().endsWith("." + filesExtension()))) {
 
+            List<Path> blogEntries = pathStream.collect(Collectors.toList());
             return createToc(docTitle, blogEntries);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -93,13 +94,13 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
                 .map(path -> new PostEntry(metaExtractor.extract(FileUtils.fileTextContent(path)), path))
                 .sorted(Comparator.comparing((PostEntry a) -> a.getPostMeta().getDate()))
                 .forEach(postEntry -> {
-                    TocItem tocItem = toc.addTocItem("entry", fileNameWithoutExtension(postEntry.getPath()));
+                    TocItem tocItem = toc.addTocItem(new TocNameAndOpts("entry"), fileNameWithoutExtension(postEntry.getPath()));
                     tocItem.setPageMeta(new PageMeta());
                     tocItem.setViewOnRelativePath(buildViewOnPath(postEntry));
                     pathByTocItem.put(tocItem, postEntry.getPath());
                 });
 
-        toc.addIndex(docTitle);
+        toc.addIndex();
 
         return toc;
     }
