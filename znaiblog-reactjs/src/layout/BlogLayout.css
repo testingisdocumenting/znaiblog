@@ -15,14 +15,17 @@ html, body {
 
     padding-left: 0;
     padding-right: 0;
+    overflow: auto
+}
 
-    overflow: hidden;
+.znai-diff-highlight {
+    height: 100%;
 }
 
 .blog-header {
     display: flex;
     align-items: center;
-    height: 32px;
+    min-height: 32px;
 
     background: var(--znaiblog-header-background);
     padding-left: calc(1 * var(--znai-single-side-horizontal-min-spacing));
@@ -37,6 +40,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    height: 100%;
 
     width: var(--znai-single-column-full-width);
     font-size: 16px;

@@ -94,7 +94,9 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
                 .map(path -> new PostEntry(metaExtractor.extract(FileUtils.fileTextContent(path)), path))
                 .sorted(Comparator.comparing((PostEntry a) -> a.getPostMeta().getDate()))
                 .forEach(postEntry -> {
-                    TocItem tocItem = toc.addTocItem(new TocNameAndOpts("entry"), fileNameWithoutExtension(postEntry.getPath()));
+                    TocItem tocItem = toc.addTocItem(new TocNameAndOpts(
+                            postEntry.getPath().getParent().getFileName().toString()),
+                            fileNameWithoutExtension(postEntry.getPath()));
                     tocItem.setPageMeta(new PageMeta());
                     tocItem.setViewOnRelativePath(buildViewOnPath(postEntry));
                     pathByTocItem.put(tocItem, postEntry.getPath());
