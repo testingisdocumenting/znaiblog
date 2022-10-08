@@ -1,6 +1,6 @@
 .blog-page-title-title {
     font-size: var(--znaiblog-title-size);
-    color: var(--znai-brand-primary-color);
+    color: var(--znaiblog-article-title-color);
     font-weight: bold;
     margin-bottom: 8px;
 }
@@ -8,7 +8,7 @@
 .blog-page-title-meta {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 .blog-page-title-date {

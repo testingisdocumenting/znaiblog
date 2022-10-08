@@ -15,14 +15,24 @@ html, body {
 
     padding-left: 0;
     padding-right: 0;
+    overflow: auto
+}
 
-    overflow: hidden;
+.znai-diff-highlight {
+    height: 100%;
 }
 
 .blog-header {
-    background-color: var(--znaiblog-header-background-color);
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+
+    background: var(--znaiblog-header-background);
     padding-left: calc(1 * var(--znai-single-side-horizontal-min-spacing));
     padding-right: calc(1 * var(--znai-single-side-horizontal-min-spacing));
+
+    border-bottom: 1px solid;
+
     margin-bottom: 48px;
 }
 
@@ -31,11 +41,11 @@ html, body {
     align-items: center;
     justify-content: space-between;
 
-    width: var(--znai-single-column-full-width);
-    font-size: var(--znaiblog-title-size);
-    color: var(--znaiblog-header-color);
+    height: 100%;
 
-    padding: 16px 0;
+    width: var(--znai-single-column-full-width);
+    font-size: 16px;
+    color: var(--znaiblog-header-color);
 
     margin-left: auto;
     margin-right: auto;

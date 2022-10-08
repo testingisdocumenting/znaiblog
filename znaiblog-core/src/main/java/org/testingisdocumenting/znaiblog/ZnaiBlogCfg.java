@@ -7,6 +7,6 @@ public class ZnaiBlogCfg {
     }
 
     public String getArticlesDirName() {
-        return "articles";
+        return "entry";
     }
 }

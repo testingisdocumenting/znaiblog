@@ -30,7 +30,7 @@ public class ListOfBlogEntriesIncludePlugin implements IncludePlugin {
                                 PluginParams pluginParams) {
         List<TocItem> tocItems = componentsRegistry.docStructure().tableOfContents().getTocItems();
 
-        return PluginResult.docElement("ListOfBlogEntries", Collections.singletonMap("tocItems",
+        return PluginResult.docElement("CategorizedListOfBlogEntries", Collections.singletonMap("tocItems",
                 tocItems.stream()
                         .filter(tocItem -> !tocItem.isIndex())
                         .map(TocItem::toMap)
