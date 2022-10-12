@@ -10,9 +10,6 @@ html, body {
     display: flex;
     flex-direction: column;
 
-    min-height: 100vh;
-    max-height: none;
-
     padding-left: 0;
     padding-right: 0;
     overflow: auto
@@ -76,11 +73,6 @@ html, body {
 
 .blog-discuss-content {
     display: flex;
-
-    max-width: var(--znai-single-column-full-width);
-
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .blog-discuss-twitter {
