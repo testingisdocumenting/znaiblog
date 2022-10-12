@@ -1,10 +1,7 @@
-.list-all-categories {
-    width: var(--znai-single-column-full-width);
-    margin-left: auto;
-    margin-right: auto;
+.znaiblog-list-all-categories {
 }
 
-.list-of-blog-entries-category {
+.znaiblog-list-of-blog-entries-category {
     font-size: 32px;
     padding-bottom: 4px;
     margin-bottom: 24px;
@@ -15,35 +12,41 @@
     text-transform: capitalize;
 }
 
-.list-of-blog-entries {
+.znaiblog-list-of-blog-entries {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 24px;
 }
 
-.blog-list-entry-link-wrapper {
+@media only screen and (max-width: 940px) {
+    .znaiblog-list-of-blog-entries {
+        grid-template-columns: 1fr;
+    }
+}
+
+.znaiblog-list-entry-link-wrapper {
     display: block;
     width: 100%;
 }
 
-.blog-list-entry a {
+.znaiblog-list-entry a {
     color: var(--znai-regular-text-color);
     text-decoration: none;
 }
 
-.blog-list-entry-title {
+.znaiblog-list-entry-title {
     font-size: var(--znaiblog-list-title-size);
     color: var(--znaiblog-article-title-color);
     font-weight: bold;
 }
 
-.blog-list-entry-date {
+.znaiblog-list-entry-date {
     color: var(--znai-regular-text-light-color);
     font-size: 12px;
     margin-bottom: 12px;
 }
 
-.blog-list-entry-summary {
+.znaiblog-list-entry-summary {
     color: var(--znai-regular-text-color);
     font-size: 16px;
 }

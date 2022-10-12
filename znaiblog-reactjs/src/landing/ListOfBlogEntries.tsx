@@ -19,11 +19,11 @@ export function CategorizedListOfBlogEntries({tocItems}: Props) {
 
 
     return (
-      <div className="list-all-categories">
+      <div className="znaiblog-list-all-categories content-block">
           {Object.keys(byCategory).map((category) => {
               return (
-                <div className="list-of-blog-entries-with-category" key={category}>
-                    <div className="list-of-blog-entries-category">{category}</div>
+                <div className="znaiblog-list-of-blog-entries-with-category" key={category}>
+                    <div className="znaiblog-list-of-blog-entries-category">{category}</div>
                     <ListOfBlogEntries tocItems={byCategory[category]}/>
                 </div>
               )
@@ -48,7 +48,7 @@ export function CategorizedListOfBlogEntries({tocItems}: Props) {
 
 function ListOfBlogEntries({tocItems}: Props) {
     return (
-        <div className="list-of-blog-entries">
+        <div className="znaiblog-list-of-blog-entries">
             {tocItems.map(e => <SingleEntry key={e.pageTitle} {...e}/>)}
         </div>
     )
@@ -56,13 +56,13 @@ function ListOfBlogEntries({tocItems}: Props) {
 
 function SingleEntry(entry: TocItem) {
     return (
-        <div className="blog-list-entry">
-            <a className="blog-list-entry-link-wrapper"
+        <div className="znaiblog-list-entry">
+            <a className="znaiblog-list-entry-link-wrapper"
                href={documentationNavigation.buildUrl(entry)}
                onClick={onBlogEntryClick(entry)}>
-                <div className="blog-list-entry-title">{entry.pageTitle}</div>
-                <div className="blog-list-entry-date">{renderDate(entry.pageMeta.date![0])}</div>
-                <div className="blog-list-entry-summary">{entry.pageMeta.summary}</div>
+                <div className="znaiblog-list-entry-title">{entry.pageTitle}</div>
+                <div className="znaiblog-list-entry-date">{renderDate(entry.pageMeta.date![0])}</div>
+                <div className="znaiblog-list-entry-summary">{entry.pageMeta.summary}</div>
             </a>
         </div>
     )

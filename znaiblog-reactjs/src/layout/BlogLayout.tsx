@@ -90,7 +90,7 @@ function Discuss({docMeta, tocItem}: DiscussProps) {
 
     return (
         <div className="blog-discuss">
-            <div className="blog-discuss-content">
+            <div className="blog-discuss-content content-block">
                 <div className="blog-discuss-twitter">
                     <a href={twitterUrl(docMeta, tocItem)} target="_blank" rel="noopener noreferrer">
                         Discuss On Twitter
