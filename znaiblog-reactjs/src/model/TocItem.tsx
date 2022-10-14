@@ -4,6 +4,12 @@ export interface TocItem {
     dirName: string;
     fileName: string;
     viewOnRelativePath: string;
+    pageSectionIdTitles: PageSectionIdTitle[];
+}
+
+export interface PageSectionIdTitle {
+    id: string;
+    title: string;
 }
 
 export interface TocItemMeta {

@@ -7,7 +7,29 @@ import {CategorizedListOfBlogEntries} from '../landing/ListOfBlogEntries';
 const onHeaderClick = simpleAction('on header click');
 
 export function blogLayoutDemo(registry: Registry) {
-    const commonData = {
+    const commonProps = layoutDemoCommonProps();
+
+    registry.add('default', () => (
+        <BlogLayout
+            renderedPage={<SamplePage/>}
+            renderedFooter={<SampleFooter/>}
+            {...commonProps}/>
+    ));
+
+    registry.add('small list of entries', () => (
+        <BlogLayout renderedPage={<CategorizedListOfBlogEntries tocItems={genListOfEntries(4)}/>}
+                    {...commonProps}
+                    renderedFooter={<SampleFooter/>}/>
+    ));
+
+    registry.add('large list of entries', () => (
+        <BlogLayout renderedPage={<CategorizedListOfBlogEntries tocItems={genListOfEntries(40)}/>}
+            {...commonProps}/>
+    ))
+}
+
+export function layoutDemoCommonProps() {
+    return {
         docMeta: {
             id: 'test-blog',
             title: 'Blog About Green Nature',
@@ -17,13 +39,24 @@ export function blogLayoutDemo(registry: Registry) {
                 link: 'https://github.com/testingisdocumenting/znaiblog/edit/master/znaiblog-example'
             }
         },
+        tocItem: {
+            pageTitle: 'page title',
+            pageMeta: {category: "Testing"},
+            dirName: 'entry',
+            fileName: 'entry-a',
+            viewOnRelativePath: 'article/entry-a.md',
+            pageSectionIdTitles: [
+                {id: "section-one", title: "Section One"}
+            ]
+        },
         onHeaderClick: onHeaderClick,
         selectedTocItem: {
             pageTitle: 'page title',
             pageMeta: {category: "Testing"},
             dirName: 'entry',
             fileName: 'entry-a',
-            viewOnRelativePath: 'article/entry-a.md'
+            viewOnRelativePath: 'article/entry-a.md',
+            pageSectionIdTitles: []
         },
         toc: {},
         onTocItemClick: {},
@@ -32,24 +65,6 @@ export function blogLayoutDemo(registry: Registry) {
         onPrevPage: {},
         textSelection: {},
     };
-
-    registry.add('default', () => (
-        <BlogLayout
-            renderedPage={<SamplePage/>}
-            renderedFooter={<SampleFooter/>}
-            {...commonData}/>
-    ));
-
-    registry.add('small list of entries', () => (
-        <BlogLayout renderedPage={<CategorizedListOfBlogEntries tocItems={genListOfEntries(4)}/>}
-                    {...commonData}
-                    renderedFooter={<SampleFooter/>}/>
-    ));
-
-    registry.add('large list of entries', () => (
-        <BlogLayout renderedPage={<CategorizedListOfBlogEntries tocItems={genListOfEntries(40)}/>}
-            {...commonData}/>
-    ))
 }
 
 function SamplePage() {
@@ -58,7 +73,7 @@ function SamplePage() {
     )
 }
 
-function SampleFooter() {
+export function SampleFooter() {
     return (
         <div className="footer">dummy footer</div>
     )

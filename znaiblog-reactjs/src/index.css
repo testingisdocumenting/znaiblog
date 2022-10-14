@@ -4,7 +4,7 @@
     --znaiblog-title-size: 36px;
     --znaiblog-list-title-size: 22px;
 
-    --znaiblog-header-background: none;
+    --znaiblog-header-background: var(--znai-background-color);
     --znaiblog-header-color: #232323;
 
     --znaiblog-mobile-breakpoint: 600px;
@@ -16,4 +16,5 @@
     --znaiblog-article-title-color: #fafafa;
     --znaiblog-entries-category-color: #eee;
     --znaiblog-header-color: #afafaf;
+    --znaiblog-header-background: var(--znai-background-color);
 }
