@@ -12,7 +12,7 @@ html, body {
 
     padding-left: 0;
     padding-right: 0;
-    overflow: auto
+    overflow: unset;
 }
 
 .znai-diff-highlight {

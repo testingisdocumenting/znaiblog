@@ -13,7 +13,8 @@ const tocItem: TocItem = {
         date: ['2019-11-02'],
         summary: ['sample summary'],
         category: "Testing"
-    }
+    },
+    pageSectionIdTitles: []
 };
 
 const onPresentationHandler = simpleAction('presentation');

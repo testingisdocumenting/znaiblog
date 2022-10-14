@@ -6,42 +6,46 @@ import {ThemeSwitch} from './ThemeSwitch';
 
 import {TocItem} from '../model/TocItem';
 
+import {ArticleSectionSelection} from '../content/ArticleSectionSelection';
+
 import './BlogLayout.css';
 
 interface Props {
-    previewTracker?: React.ReactNode,
-    searchPopup?: React.ReactNode,
-    renderedPage: React.ReactNode,
-    renderedNextPrevNavigation?: React.ReactNode,
-    renderedFooter?: React.ReactNode,
-    docMeta: DocMeta,
-    selectedTocItem: TocItem,
-    toc: object,
-    onHeaderClick(): void,
-    onTocItemClick: any,
-    onTocItemPageSectionClick: any,
-    onNextPage: any,
-    onPrevPage: any,
-    textSelection: any,
-    pageGenError?: string
+  previewTracker?: React.ReactNode,
+  searchPopup?: React.ReactNode,
+  renderedPage: React.ReactNode,
+  renderedNextPrevNavigation?: React.ReactNode,
+  renderedFooter?: React.ReactNode,
+  docMeta: DocMeta,
+  selectedTocItem: TocItem,
+  toc: object,
+  tocItem: TocItem,
+  onHeaderClick(): void,
+  onTocItemClick: any,
+  onTocItemPageSectionClick: any,
+  onNextPage: any,
+  onPrevPage: any,
+  textSelection: any,
+  pageGenError?: string
 }
 
 export function BlogLayout({
-                               previewTracker,
-                               searchPopup,
-                               renderedPage,
-                               renderedNextPrevNavigation,
-                               renderedFooter,
-                               docMeta,
-                               selectedTocItem,
-                               toc,
-                               onHeaderClick,
-                               onTocItemClick,
-                               onTocItemPageSectionClick,
-                               onNextPage,
-                               onPrevPage,
-                               textSelection,
-                               pageGenError
+                             previewTracker,
+                             searchPopup,
+                             renderedPage,
+                             renderedNextPrevNavigation,
+                             renderedFooter,
+                             docMeta,
+                             selectedTocItem,
+                             toc,
+                             tocItem,
+                             onHeaderClick,
+                             onTocItemClick,
+                             onTocItemPageSectionClick,
+                             onNextPage,
+                             onPrevPage,
+                             textSelection,
+                             pageGenError
                            }: Props) {
 
     const pageGenErrorPanel = pageGenError ? (<div className="page-gen-error">{pageGenError}</div>) : null;
@@ -74,8 +78,13 @@ export function BlogLayout({
 
                 {pageGenErrorPanel}
             </div>
+            <ArticleSectionSelection tocItem={tocItem} renderedPage={renderedPage} onSectionSelect={onArticleSectionSelect} />
         </div>
     )
+
+    function onArticleSectionSelect(id: string) {
+      onTocItemPageSectionClick(id);
+    }
 }
 
 interface DiscussProps {
