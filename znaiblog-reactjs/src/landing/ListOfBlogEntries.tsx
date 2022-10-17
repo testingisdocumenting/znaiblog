@@ -12,43 +12,9 @@ interface Props {
     tocItems: TocItem[];
 }
 
-export function CategorizedListOfBlogEntries({tocItems}: Props) {
-    const reversedTocItems = [...tocItems].reverse();
-
-    const byCategory: Record<string, Array<TocItem>> = groupByCategory();
-
-
+export function ListOfBlogEntries({tocItems}: Props) {
     return (
-      <div className="znaiblog-list-all-categories content-block">
-          {Object.keys(byCategory).map((category) => {
-              return (
-                <div className="znaiblog-list-of-blog-entries-with-category" key={category}>
-                    <div className="znaiblog-list-of-blog-entries-category">{category}</div>
-                    <ListOfBlogEntries tocItems={byCategory[category]}/>
-                </div>
-              )
-          })}
-      </div>
-    );
-
-    function groupByCategory() {
-        const result: Record<string, Array<TocItem>> = {};
-        reversedTocItems.forEach(tocItem => {
-            const existing = result[tocItem.pageMeta.category];
-            if (existing) {
-                existing.push(tocItem);
-            } else {
-                result[tocItem.pageMeta.category] = [tocItem];
-            }
-        })
-
-        return result;
-    }
-}
-
-function ListOfBlogEntries({tocItems}: Props) {
-    return (
-        <div className="znaiblog-list-of-blog-entries">
+        <div className="znaiblog-list-of-blog-entries content-block">
             {tocItems.map(e => <SingleEntry key={e.pageTitle} {...e}/>)}
         </div>
     )

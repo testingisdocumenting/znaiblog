@@ -11,8 +11,7 @@ const tocItem: TocItem = {
     viewOnRelativePath: 'article/test-page-title.md',
     pageMeta: {
         date: ['2019-11-02'],
-        summary: ['sample summary'],
-        category: "Testing"
+        summary: ['sample summary']
     },
     pageSectionIdTitles: []
 };

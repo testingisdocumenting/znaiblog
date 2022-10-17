@@ -14,6 +14,7 @@ import org.testingisdocumenting.znaiblog.PostEntry;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -64,7 +65,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
     @Override
     public Path fullPath(ComponentsRegistry componentsRegistry, Path root, TocItem tocItem) {
         if (tocItem.isIndex()) {
-            return root.resolve("index.md");
+            return root.resolve(cfg.getArticlesDirName()).resolve("index.md");
         }
 
         Path path = pathByTocItem.get(tocItem);
@@ -91,7 +92,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
         TableOfContents toc = new TableOfContents();
 
         blogEntries.stream()
-                .map(path -> new PostEntry(metaExtractor.extract(FileUtils.fileTextContent(path)), path))
+                .map(path -> createPostEntry(metaExtractor, path))
                 .sorted(Comparator.comparing((PostEntry a) -> a.getPostMeta().getDate()))
                 .forEach(postEntry -> {
                     TocItem tocItem = toc.addTocItem(new TocNameAndOpts(
@@ -105,6 +106,14 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
         toc.addIndex();
 
         return toc;
+    }
+
+    private static PostEntry createPostEntry(PostMetaExtractor metaExtractor, Path path) {
+        PostMeta postMeta = path.getFileName().toString().equals("index.md") ?
+                new PostMeta(LocalDate.now(), "") :
+                metaExtractor.extract(FileUtils.fileTextContent(path));
+
+        return new PostEntry(postMeta, path);
     }
 
     private String filesExtension() {

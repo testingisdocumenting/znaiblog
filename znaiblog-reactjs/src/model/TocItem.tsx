@@ -14,6 +14,5 @@ export interface PageSectionIdTitle {
 
 export interface TocItemMeta {
     summary?: string[];
-    category: string;
     date?: string[];
 }
