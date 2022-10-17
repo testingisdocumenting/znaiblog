@@ -76,7 +76,7 @@ export function ArticleSectionSelection({tocItem, renderedPage, onSectionSelect}
   )
 
   function expandSectionSelection() {
-    setIsExpanded(true);
+    setIsExpanded(false); // TODO make it work properly
   }
 
   function closeSectionSelection() {

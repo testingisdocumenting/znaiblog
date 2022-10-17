@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {Registry, simpleAction} from 'react-component-viewer';
 import {BlogLayout} from './BlogLayout';
-import {CategorizedListOfBlogEntries} from '../landing/ListOfBlogEntries';
+import {ListOfBlogEntries} from '../landing/ListOfBlogEntries';
 
 const onHeaderClick = simpleAction('on header click');
 
@@ -17,13 +17,13 @@ export function blogLayoutDemo(registry: Registry) {
     ));
 
     registry.add('small list of entries', () => (
-        <BlogLayout renderedPage={<CategorizedListOfBlogEntries tocItems={genListOfEntries(4)}/>}
+        <BlogLayout renderedPage={<ListOfBlogEntries tocItems={genListOfEntries(4)}/>}
                     {...commonProps}
                     renderedFooter={<SampleFooter/>}/>
     ));
 
     registry.add('large list of entries', () => (
-        <BlogLayout renderedPage={<CategorizedListOfBlogEntries tocItems={genListOfEntries(40)}/>}
+        <BlogLayout renderedPage={<ListOfBlogEntries tocItems={genListOfEntries(40)}/>}
             {...commonProps}/>
     ))
 }

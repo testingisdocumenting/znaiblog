@@ -28,11 +28,12 @@ public class ListOfBlogEntriesIncludePlugin implements IncludePlugin {
                                 ParserHandler parserHandler,
                                 Path path,
                                 PluginParams pluginParams) {
+        String category = pluginParams.getFreeParam();
         List<TocItem> tocItems = componentsRegistry.docStructure().tableOfContents().getTocItems();
 
-        return PluginResult.docElement("CategorizedListOfBlogEntries", Collections.singletonMap("tocItems",
+        return PluginResult.docElement("ListOfBlogEntries", Collections.singletonMap("tocItems",
                 tocItems.stream()
-                        .filter(tocItem -> !tocItem.isIndex())
+                        .filter(tocItem -> tocItem.getDirName().equals(category))
                         .map(TocItem::toMap)
                         .collect(Collectors.toList())));
     }

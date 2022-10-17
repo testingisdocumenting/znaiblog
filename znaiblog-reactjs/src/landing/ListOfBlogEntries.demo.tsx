@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 import {Registry} from 'react-component-viewer';
-import {CategorizedListOfBlogEntries} from './ListOfBlogEntries';
+import {ListOfBlogEntries} from './ListOfBlogEntries';
 
 export function listOfBlogEntriesDemo(registry: Registry) {
     registry.add('default', () => (
-        <CategorizedListOfBlogEntries tocItems={sampleData()}/>
+        <ListOfBlogEntries tocItems={sampleData()}/>
     ));
 }
 
@@ -14,7 +14,7 @@ function sampleData() {
         {
             "sectionTitle": "Entry",
             "pageTitle": "Entry A",
-            "pageMeta": {"date": ["2019-10-26"], "summary": ["newer about blogging"], "category": "Testing"},
+            "pageMeta": {"date": ["2019-10-26"], "summary": ["newer about blogging"]},
             "fileName": "entry-a",
             "dirName": "entry",
             "viewOnRelativePath": "article/entry-a.md",
