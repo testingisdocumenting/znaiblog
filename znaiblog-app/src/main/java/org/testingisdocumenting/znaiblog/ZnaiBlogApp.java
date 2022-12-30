@@ -58,6 +58,7 @@ public class ZnaiBlogApp {
                 withGlobalReferencesPath(cliConfig.getSourceRoot().resolve("references.csv")).
                 withFooterPath(cliConfig.getSourceRoot().resolve("footer.md")).
                 withExtensionsDefPath(cliConfig.getSourceRoot().resolve("extensions.json")).
+                withGlobalPluginParamsPath(cliConfig.getSourceRoot().resolve("plugin-params.json")).
                 withWebResources(favIconResource).
                 withEnabledPreview(cliConfig.isPreview());
 

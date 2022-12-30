@@ -22,8 +22,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.testingisdocumenting.znaiblog.ZnaiBlogCfg.cfg;
-
 public class BlogMarkdownParsingConfiguration implements MarkupParsingConfiguration {
     public static final String CONFIGURATION_NAME = "markdown-blog";
 
@@ -41,9 +39,10 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
 
     @Override
     public TableOfContents createToc(String docTitle, ComponentsRegistry componentsRegistry) {
-        try (Stream<Path> pathStream = Files.walk(sourceRoot.resolve(cfg.getArticlesDirName()))
+        try (Stream<Path> pathStream = Files.walk(sourceRoot)
                 .filter(Files::isRegularFile)
-                .filter(p -> p.getFileName().toString().endsWith("." + filesExtension()))) {
+                .filter(p -> (!p.getParent().equals(sourceRoot) || p.getFileName().toString().equals("index.md")) &&
+                        p.getFileName().toString().endsWith("." + filesExtension()))) {
 
             List<Path> blogEntries = pathStream.collect(Collectors.toList());
             return createToc(docTitle, blogEntries);
@@ -65,7 +64,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
     @Override
     public Path fullPath(ComponentsRegistry componentsRegistry, Path root, TocItem tocItem) {
         if (tocItem.isIndex()) {
-            return root.resolve(cfg.getArticlesDirName()).resolve("index.md");
+            return root.resolve("index.md");
         }
 
         Path path = pathByTocItem.get(tocItem);
@@ -90,6 +89,7 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
         PostMetaExtractor metaExtractor = new PostMetaExtractor();
 
         TableOfContents toc = new TableOfContents();
+        toc.addIndex();
 
         blogEntries.stream()
                 .map(path -> createPostEntry(metaExtractor, path))
@@ -102,8 +102,6 @@ public class BlogMarkdownParsingConfiguration implements MarkupParsingConfigurat
                     tocItem.setViewOnRelativePath(buildViewOnPath(postEntry));
                     pathByTocItem.put(tocItem, postEntry.getPath());
                 });
-
-        toc.addIndex();
 
         return toc;
     }
